@@ -1,4 +1,4 @@
-package models;
+package src.main.java.com.mycompany.delivery.models;
 
 public class CupomDescontoEntrega {
     private String nomeMetodo;

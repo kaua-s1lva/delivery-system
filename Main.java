@@ -1,13 +1,13 @@
 import java.util.Date;
 
-import formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
-import formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
-import formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
-import models.Cliente;
-import models.Item;
-import models.Pedido;
-import services.CalculadoraDeDescontoTaxaEntregaService;
-import services.CalculadoraDeDescontoValorPedidoService;
+import src.main.java.com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
+import src.main.java.com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
+import src.main.java.com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
+import src.main.java.com.mycompany.delivery.models.Cliente;
+import src.main.java.com.mycompany.delivery.models.Item;
+import src.main.java.com.mycompany.delivery.models.Pedido;
+import src.main.java.com.mycompany.delivery.services.CalculadoraDeDescontoTaxaEntregaService;
+import src.main.java.com.mycompany.delivery.services.CalculadoraDeDescontoValorPedidoService;
 
 public class Main {
     public static void main (String[] args) {

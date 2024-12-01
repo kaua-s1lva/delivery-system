@@ -1,6 +1,6 @@
-package interfaces;
+package src.main.java.com.mycompany.delivery.interfaces;
 
-import models.Pedido;
+import src.main.java.com.mycompany.delivery.models.Pedido;
 
 public interface IFormaDescontoValorPedido {
     public void calcularDesconto(Pedido pedido);

@@ -1,11 +1,11 @@
-package formasDesconto;
-
-import interfaces.IFormaDescontoTaxaEntrega;
-import models.CupomDescontoEntrega;
-import models.Pedido;
+package src.main.java.com.mycompany.delivery.formasDesconto;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import src.main.java.com.mycompany.delivery.interfaces.IFormaDescontoTaxaEntrega;
+import src.main.java.com.mycompany.delivery.models.CupomDescontoEntrega;
+import src.main.java.com.mycompany.delivery.models.Pedido;
 
 public class FormaDescontoTaxaPorBairro implements IFormaDescontoTaxaEntrega {
     private Map<String, Double> bairros;
