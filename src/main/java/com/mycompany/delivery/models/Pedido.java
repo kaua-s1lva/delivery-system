@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Pedido {
+    private static int codPedido=0;
     private double taxaEntrega;
     private Cliente cliente;
     private ArrayList<Item> itens = new ArrayList<>();
@@ -17,6 +18,7 @@ public class Pedido {
         this.taxaEntrega = taxaEntrega;
         cuponsDescontoEntrega = new ArrayList<>();
         cuponsDescontoValorPedido = new ArrayList<>();
+        codPedido++;
     }
 
     public void adicionarItem (Item item) {
@@ -86,6 +88,10 @@ public class Pedido {
 
     public void setCuponsDescontoEntrega(CupomDescontoEntrega cupom) {
         this.cuponsDescontoEntrega.add(cupom);
+    }
+
+    public int getCodPedido() {
+        return codPedido;
     }
 
     @Override

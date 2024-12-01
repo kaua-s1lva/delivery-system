@@ -41,9 +41,9 @@ public class DeliverySystem {
             System.out.println("Falha: " + e);
         }
         System.out.println(pedido.toString());
+        System.out.println("O calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
 
-        System.out.println(UsuarioLogadoService.getNomeUsuario());
-        Cobranca cobranca = new Cobranca("Tetzer", LocalDate.now(), LocalTime.now(), 1, "Calculo de valor total", pedido.getCliente().getNome());
+        Cobranca cobranca = new Cobranca(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(), "Calculo de valor total", pedido.getCliente().getNome());
         RegistradoraLogService reg = new RegistradoraLogService();
 
         reg.registrar(cobranca, new XMLLog());
