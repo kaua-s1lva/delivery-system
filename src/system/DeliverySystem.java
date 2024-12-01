@@ -1,14 +1,20 @@
 package src.system;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 import src.main.java.com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import src.main.java.com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import src.main.java.com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
 import src.main.java.com.mycompany.delivery.models.Cliente;
+import src.main.java.com.mycompany.delivery.models.Cobranca;
 import src.main.java.com.mycompany.delivery.models.Item;
 import src.main.java.com.mycompany.delivery.models.Pedido;
 import src.main.java.com.mycompany.delivery.services.CalculadoraDeDescontoTaxaEntregaService;
 import src.main.java.com.mycompany.delivery.services.CalculadoraDeDescontoValorPedidoService;
+import src.main.java.com.mycompany.delivery.services.RegistradoraLogService;
+import src.main.java.com.mycompany.delivery.services.UsuarioLogadoService;
+import src.main.java.com.mycompany.delivery.tiposLog.XMLLog;
 
 public class DeliverySystem {
     public static void main (String[] args) {
@@ -35,5 +41,11 @@ public class DeliverySystem {
             System.out.println("Falha: " + e);
         }
         System.out.println(pedido.toString());
+
+        System.out.println(UsuarioLogadoService.getNomeUsuario());
+        Cobranca cobranca = new Cobranca("Tetzer", LocalDate.now(), LocalTime.now(), 1, "Calculo de valor total", pedido.getCliente().getNome());
+        RegistradoraLogService reg = new RegistradoraLogService();
+
+        reg.registrar(cobranca, new XMLLog());
     }
 }
