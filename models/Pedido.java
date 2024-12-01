@@ -5,17 +5,12 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import abstractions.EstadoPedido;
-import interfaces.IMetodoPagamento;
-
 public class Pedido {
     private double taxaEntrega;
     private Cliente cliente;
     private ArrayList<Item> itens = new ArrayList<>();
     private List<CupomDescontoEntrega> cuponsDescontoEntrega;
     private List<CupomDescontoValorPedido> cuponsDescontoValorPedido;
-    private EstadoPedido estado;
-    private IMetodoPagamento metodoPagamento;
 
     public Pedido (Date data, Cliente cliente, double taxaEntrega) {
         this.cliente = cliente;
@@ -89,35 +84,17 @@ public class Pedido {
         return Collections.unmodifiableList(this.cuponsDescontoValorPedido);
     }
 
-    public EstadoPedido getEstado () {
-        return this.estado;
-    }
-
     public void setCuponsDescontoEntrega(CupomDescontoEntrega cupom) {
         this.cuponsDescontoEntrega.add(cupom);
-    }
-
-    public void setEstado(EstadoPedido estado) {
-        this.estado = estado;
-    }
-
-    public void setPagamentoRealizado(IMetodoPagamento metodoPagamento) {
-        this.metodoPagamento = metodoPagamento;
-    }
-
-    public IMetodoPagamento getPagamentoRealizado() {
-        return metodoPagamento;
     }
 
     @Override
     public String toString() {
         return "\nTaxa de entrega: " + taxaEntrega + 
-        "\nStatus do pedido: " + estado.getClass() + 
         "\nNome do cliente: " + cliente.getNome() + 
         "\nDesconto concedido para taxa de entrega: " + this.getDescontoConcedidoTaxaEntrega() + 
         "\nDesconto concedido para valor do pedido: " + this.getDescontoConcedidoValorPedido() + 
         "\nValor total do pedido: " + this.getValorTotalPedido() + 
-        "\nPagamento foi realizado? " + metodoPagamento + 
         "\nValor Pedido desconto: " + this.cuponsDescontoValorPedido;
     }
 }

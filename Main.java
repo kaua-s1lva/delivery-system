@@ -3,15 +3,11 @@ import java.util.Date;
 import formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
-import interfaces.IMetodoPagamento;
-import metodosPagamento.CartaoDebito;
 import models.Cliente;
 import models.Item;
 import models.Pedido;
 import services.CalculadoraDeDescontoTaxaEntregaService;
 import services.CalculadoraDeDescontoValorPedidoService;
-import services.ControladorDeEstadosPedidoService;
-import services.SistemaPagamentoService;
 
 public class Main {
     public static void main (String[] args) {
@@ -27,23 +23,6 @@ public class Main {
         CalculadoraDeDescontoTaxaEntregaService calculadora = new CalculadoraDeDescontoTaxaEntregaService();
 
         calculadora.addFormaDesconto(pedido);
-
-        ControladorDeEstadosPedidoService controladorEstados = new ControladorDeEstadosPedidoService(pedido);
-
-        try {
-            controladorEstados.preparar(pedido);
-            controladorEstados.finalizarPreparo(pedido);
-            controladorEstados.entregar(pedido);
-        } catch (RuntimeException e) {
-            System.out.println("Falha: " + e.getMessage());
-        }
-
-        SistemaPagamentoService sistemaPagamento = new SistemaPagamentoService();
-        
-        //IMetodoPagamento boleto = new Boleto();
-        IMetodoPagamento cartaoDebito = new CartaoDebito("252161616", "12/24", 243, pedido.getCliente().getNome());
-        
-        sistemaPagamento.realizarPagamento(pedido, cartaoDebito, pedido.getValorPedido()); 
 
         CalculadoraDeDescontoValorPedidoService calculadoraValorPedido = new CalculadoraDeDescontoValorPedidoService();
 
