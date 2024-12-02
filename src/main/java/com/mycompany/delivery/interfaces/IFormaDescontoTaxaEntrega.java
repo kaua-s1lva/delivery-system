@@ -1,6 +1,6 @@
-package src.main.java.com.mycompany.delivery.interfaces;
+package com.mycompany.delivery.interfaces;
 
-import src.main.java.com.mycompany.delivery.models.Pedido;
+import com.mycompany.delivery.models.Pedido;
 
 public interface IFormaDescontoTaxaEntrega {
     public void calcularDesconto(Pedido pedido);

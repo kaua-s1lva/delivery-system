@@ -1,4 +1,4 @@
-package src.main.java.com.mycompany.delivery.models;
+package com.mycompany.delivery.models;
 
 public class Item {
     private String nome;

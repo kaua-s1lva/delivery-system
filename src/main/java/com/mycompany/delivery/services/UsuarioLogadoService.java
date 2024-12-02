@@ -1,4 +1,4 @@
-package src.main.java.com.mycompany.delivery.services;
+package com.mycompany.delivery.services;
 
 import java.util.Random;
 

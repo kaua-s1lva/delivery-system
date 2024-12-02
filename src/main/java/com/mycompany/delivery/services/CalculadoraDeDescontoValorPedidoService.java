@@ -1,7 +1,7 @@
-package src.main.java.com.mycompany.delivery.services;
+package com.mycompany.delivery.services;
 
-import src.main.java.com.mycompany.delivery.interfaces.IFormaDescontoValorPedido;
-import src.main.java.com.mycompany.delivery.models.Pedido;
+import com.mycompany.delivery.interfaces.IFormaDescontoValorPedido;
+import com.mycompany.delivery.models.Pedido;
 
 public class CalculadoraDeDescontoValorPedidoService {
     IFormaDescontoValorPedido desconto;

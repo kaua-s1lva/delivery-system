@@ -1,4 +1,4 @@
-package src.main.java.com.mycompany.delivery.models;
+package com.mycompany.delivery.models;
 
 import java.util.ArrayList;
 import java.util.Collections;

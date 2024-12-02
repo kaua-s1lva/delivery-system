@@ -1,13 +1,13 @@
-package src.main.java.com.mycompany.delivery.services;
+package com.mycompany.delivery.services;
 
 import java.util.ArrayList;
 
-import src.main.java.com.mycompany.delivery.formasDesconto.FormaDescontoTaxaPorBairro;
-import src.main.java.com.mycompany.delivery.formasDesconto.FormaDescontoTaxaPorTipoCliente;
-import src.main.java.com.mycompany.delivery.formasDesconto.FormaDescontoTipoItem;
-import src.main.java.com.mycompany.delivery.formasDesconto.FormaDescontoValorPedido;
-import src.main.java.com.mycompany.delivery.interfaces.IFormaDescontoTaxaEntrega;
-import src.main.java.com.mycompany.delivery.models.Pedido;
+import com.mycompany.delivery.formasDesconto.FormaDescontoTaxaPorBairro;
+import com.mycompany.delivery.formasDesconto.FormaDescontoTaxaPorTipoCliente;
+import com.mycompany.delivery.formasDesconto.FormaDescontoTipoItem;
+import com.mycompany.delivery.formasDesconto.FormaDescontoValorPedido;
+import com.mycompany.delivery.interfaces.IFormaDescontoTaxaEntrega;
+import com.mycompany.delivery.models.Pedido;
 
 public class CalculadoraDeDescontoTaxaEntregaService {
     private ArrayList<IFormaDescontoTaxaEntrega> metodosDeDesconto = new ArrayList<>();
