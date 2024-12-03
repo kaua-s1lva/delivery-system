@@ -18,15 +18,22 @@ public class LogService {
         return singleInstance;
     }
     
-    public ILog getILog(){
+    public ILog obterTipoLog(){
         return log;
     }
     
-    public void setILog(ILog log){
+    public void configurarTipoLog(ILog log){
+        if(log == null){
+            throw new IllegalArgumentException("O tipo de log nao pode ser nulo");
+        }
         this.log = log;
     }
     
-    public static void registrar(RegistroOperacao cobranca) {
-        getInstance().getILog().escreverMensagem(cobranca.toString());
+    public static void registrarLog(RegistroOperacao registro) {
+        ILog log = getInstance().obterTipoLog();
+        if(log == null){
+            throw new IllegalStateException("O log nao foi configurado ");
+        }
+        log.escreverMensagem(registro.toString());
     }
 }

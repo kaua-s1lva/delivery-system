@@ -8,7 +8,7 @@ import com.mycompany.delivery.models.CupomDescontoValorPedido;
 import com.mycompany.delivery.models.Pedido;
 
 public class FormaDescontoTipoClienteValorPedido implements IFormaDescontoValorPedido {
-    private Map<String,Double> clientes;
+    private final Map<String,Double> clientes;
 
     public FormaDescontoTipoClienteValorPedido() {
         clientes = new HashMap<>();

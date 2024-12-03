@@ -10,7 +10,7 @@ import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
 import com.mycompany.delivery.services.CalculadoraDeDescontoTaxaEntregaService;
 import com.mycompany.delivery.services.CalculadoraDeDescontoValorPedidoService;
-import com.mycompany.delivery.tiposLog.XMLLog;
+import com.mycompany.delivery.log.XMLLog;
 
 public class DeliverySystem {
     public static void main (String[] args) {
