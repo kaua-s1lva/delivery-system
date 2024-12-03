@@ -45,7 +45,7 @@ public class DeliverySystem {
         SQLiteTableCreation.createRegistroTable();
         
         LogService logService = LogService.getInstance();
-        logService.configurarTipoLog(new XMLLog("teste.xml"));
+        logService.setLog(new XMLLog("teste.xml"));
         
         PedidoService.calcularValorTotalPedido(pedido);
 
