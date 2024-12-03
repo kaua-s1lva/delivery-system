@@ -11,7 +11,7 @@ public class XMLLog implements ILog {
         if(nomeArquivo == null){
             throw new IllegalArgumentException("O nome do arquivo nao pode ser nulo ");
         }
-        String caminhoCompleto = "xml/"+nomeArquivo; 
+        String caminhoCompleto = "xml/"+nomeArquivo;
         this.nomeArquivo = caminhoCompleto;
     }  
     
