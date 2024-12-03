@@ -10,7 +10,7 @@ public class FormatSQL implements IFormat {
 
     @Override
     public String format(RegistroOperacao registroOperacao) {
-        String queryInsert = String.format("INSERT INTO registros (nomeUsuario, data, hora, codigoPedido, nomeOperacao, nomeCliente) "
+        String queryInsert = String.format("INSERT INTO registro (nomeUsuario, data, hora, codigoPedido, nomeOperacao, nomeCliente) "
             + "VALUES ('%s', '%s', '%s', %d, '%s', '%s');", 
             registroOperacao.getNomeUsuario(), 
             registroOperacao.getData(), 
