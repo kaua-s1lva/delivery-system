@@ -41,6 +41,7 @@ public class DeliverySystem {
         }
         System.out.println(pedido.toString());
 
+        //criação da tabela de Log
         SQLiteTableCreation.createRegistroTable();
         
         LogService logService = LogService.getInstance();
