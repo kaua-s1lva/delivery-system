@@ -1,6 +1,7 @@
 package com.mycompany.delivery.system;
 import java.util.Date;
 
+import com.mycompany.delivery.database.migrations.SQLiteTableCreation;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
@@ -39,11 +40,14 @@ public class DeliverySystem {
             System.out.println("Falha: " + e);
         }
         System.out.println(pedido.toString());
+
+        SQLiteTableCreation.createRegistroTable();
         
         LogService logService = LogService.getInstance();
         logService.configurarTipoLog(new XMLLog("teste.xml"));
         
         PedidoService.calcularValorTotalPedido(pedido);
+
         //System.out.println("O calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
 
         //Cobranca cobranca = new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(), "Calculo de valor total", pedido.getCliente().getNome());
