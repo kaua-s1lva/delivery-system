@@ -17,14 +17,16 @@ public class PedidoService {
     
     
     public static double calcularValorTotalPedido(Pedido pedido) {
+        if (pedido == null) {
+            throw new IllegalArgumentException("Pedido não pode ser nulo.");
+        }
         
         double valorTotal = pedido.getValorTotalPedido();
         
         String NOME_DO_METODO = "getValorTotalPedido";
         String nomeOperacao = "Calculo do valor total do pedido (" + NOME_DO_METODO + ")";
-        LogService.registrar(new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(),nomeOperacao, pedido.getCliente().getNome()));
-        return valorTotal;
-        
+        LogService.registrarLog(new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(),nomeOperacao, pedido.getCliente().getNome()));
+        return valorTotal;  
         
     }
     
