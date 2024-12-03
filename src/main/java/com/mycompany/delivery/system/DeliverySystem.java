@@ -5,6 +5,7 @@ import com.mycompany.delivery.database.migrations.SQLiteTableCreation;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
+import com.mycompany.delivery.format.FormatXML;
 import com.mycompany.delivery.models.Cliente;
 import com.mycompany.delivery.models.RegistroOperacao;
 import com.mycompany.delivery.models.Item;
@@ -46,6 +47,7 @@ public class DeliverySystem {
         
         LogService logService = LogService.getInstance();
         logService.setLog(new XMLLog("teste.xml"));
+        logService.setFormatLog(new FormatXML());
         
         PedidoService.calcularValorTotalPedido(pedido);
 
