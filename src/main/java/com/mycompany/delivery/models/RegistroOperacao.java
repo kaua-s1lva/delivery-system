@@ -46,7 +46,7 @@ public class RegistroOperacao {
 
     @Override
     public String toString() {
-        return nomeUsuario + ";" + data.toString() + ";" + hora.toString() + ";" + ";" + codPedido + ";" + nomeOperacao + ";" + nomeCliente;
+        return nomeUsuario + ";" + data.toString() + ";" + hora.toString() + ";" + codPedido + ";" + nomeOperacao + ";" + nomeCliente;
     }
     
 }
