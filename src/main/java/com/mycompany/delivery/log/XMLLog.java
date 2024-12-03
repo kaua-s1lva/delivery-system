@@ -23,5 +23,4 @@ public class XMLLog implements ILog {
             System.out.println(ex.getMessage());
         }
     }
-    
 }
