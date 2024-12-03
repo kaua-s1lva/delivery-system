@@ -8,5 +8,4 @@ public class XMLLog implements ILog {
     public void escreverMensagem(String mensagem) {
         System.out.println(mensagem);
     }
-    
 }
