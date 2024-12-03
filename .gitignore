@@ -1,3 +1,4 @@
-/target
-/.vscode
-/db/*
+target
+.vscode
+*.db
+target
