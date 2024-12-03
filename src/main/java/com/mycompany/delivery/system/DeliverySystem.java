@@ -5,7 +5,11 @@ import com.mycompany.delivery.database.migrations.SQLiteTableCreation;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
+import com.mycompany.delivery.format.FormatJSON;
+import com.mycompany.delivery.format.FormatSQL;
 import com.mycompany.delivery.format.FormatXML;
+import com.mycompany.delivery.log.DBLog;
+import com.mycompany.delivery.log.JSONLog;
 import com.mycompany.delivery.models.Cliente;
 import com.mycompany.delivery.models.RegistroOperacao;
 import com.mycompany.delivery.models.Item;
@@ -44,10 +48,16 @@ public class DeliverySystem {
 
         //criação da tabela de Log
         SQLiteTableCreation.createRegistroTable();
-        
+
+//
         LogService logService = LogService.getInstance();
-        logService.setLog(new XMLLog("teste.xml"));
-        logService.setFormatLog(new FormatXML());
+        logService.setLog(new JSONLog("pessoa.json"));
+        logService.setFormatLog(new FormatJSON());
+
+//        logService.setLog(new XMLLog("teste.xml"));
+//        logService.setFormatLog(new FormatXML());
+//        logService.setLog(new JSONLog("teste.json"));
+//        logService.setFormatLog(new FormatJSON());
         
         PedidoService.calcularValorTotalPedido(pedido);
 
