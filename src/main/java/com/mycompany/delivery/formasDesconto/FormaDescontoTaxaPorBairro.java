@@ -8,7 +8,7 @@ import com.mycompany.delivery.models.CupomDescontoEntrega;
 import com.mycompany.delivery.models.Pedido;
 
 public class FormaDescontoTaxaPorBairro implements IFormaDescontoTaxaEntrega {
-    private Map<String, Double> bairros;
+    private final Map<String, Double> bairros;
 
     public FormaDescontoTaxaPorBairro() {
         bairros = new HashMap<>();

@@ -49,4 +49,6 @@ public class RegistroOperacao {
         return "Cobranca [nomeUsuario=" + nomeUsuario + ", data=" + data + ", hora=" + hora + ", codPedido=" + codPedido
                 + ", nomeOperacao=" + nomeOperacao + ", nomeCliente=" + nomeCliente + "]";
     }
+    
+    
 }

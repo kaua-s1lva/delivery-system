@@ -9,7 +9,7 @@ import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
 
 public class FormaDescontoTipoItem implements IFormaDescontoTaxaEntrega {
-    private Map<String,Double> descontosPorTipoItem;
+    private final Map<String,Double> descontosPorTipoItem;
 
     public FormaDescontoTipoItem() {
         descontosPorTipoItem = new HashMap<>();

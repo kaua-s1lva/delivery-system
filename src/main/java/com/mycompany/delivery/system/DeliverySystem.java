@@ -11,7 +11,9 @@ import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
 import com.mycompany.delivery.services.CalculadoraDeDescontoTaxaEntregaService;
 import com.mycompany.delivery.services.CalculadoraDeDescontoValorPedidoService;
-import com.mycompany.delivery.tiposLog.XMLLog;
+import com.mycompany.delivery.log.XMLLog;
+import com.mycompany.delivery.services.LogService;
+import com.mycompany.delivery.services.PedidoService;
 
 public class DeliverySystem {
     public static void main (String[] args) {
@@ -39,8 +41,13 @@ public class DeliverySystem {
         }
         System.out.println(pedido.toString());
 
-
         SQLiteTableCreation.createRegistroTable();
+        
+        LogService logService = LogService.getInstance();
+        logService.configurarTipoLog(new XMLLog("teste.xml"));
+        
+        PedidoService.calcularValorTotalPedido(pedido);
+
         //System.out.println("O calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
 
         //Cobranca cobranca = new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(), "Calculo de valor total", pedido.getCliente().getNome());
