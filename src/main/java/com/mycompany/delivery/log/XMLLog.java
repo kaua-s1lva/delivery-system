@@ -16,7 +16,6 @@ public class XMLLog implements ILog {
     
     @Override
     public void escreverMensagem(String mensagem) {
-        System.out.println();
         try (FileWriter writer = new FileWriter(nomeArquivo, true)) {
             writer.write(mensagem + "\n");
         } catch (IOException ex) {

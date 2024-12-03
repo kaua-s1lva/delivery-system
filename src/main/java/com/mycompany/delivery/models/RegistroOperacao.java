@@ -46,9 +46,7 @@ public class RegistroOperacao {
 
     @Override
     public String toString() {
-        return "Cobranca [nomeUsuario=" + nomeUsuario + ", data=" + data + ", hora=" + hora + ", codPedido=" + codPedido
-                + ", nomeOperacao=" + nomeOperacao + ", nomeCliente=" + nomeCliente + "]";
+        return nomeUsuario + ";" + data.toString() + ";" + hora.toString() + ";" + codPedido + ";" + nomeOperacao + ";" + nomeCliente;
     }
-    
     
 }
