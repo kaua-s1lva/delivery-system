@@ -5,7 +5,7 @@ import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomVal
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
 import com.mycompany.delivery.models.Cliente;
-import com.mycompany.delivery.models.Cobranca;
+import com.mycompany.delivery.models.RegistroOperacao;
 import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
 import com.mycompany.delivery.services.CalculadoraDeDescontoTaxaEntregaService;
@@ -39,12 +39,12 @@ public class DeliverySystem {
         System.out.println(pedido.toString());
         //System.out.println("O calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
 
-        //Cobranca cobranca = new Cobranca(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(), "Calculo de valor total", pedido.getCliente().getNome());
+        //Cobranca cobranca = new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(), "Calculo de valor total", pedido.getCliente().getNome());
         //RegistradoraLogService reg = new RegistradoraLogService();
 
         //reg.registrar(cobranca, new XMLLog());
 /*
-        Cobranca cobranca = new Cobranca();
+        RegistroOperacao cobranca = new RegistroOperacao();
 
         cobranca.registrarCobranca(pedido, new XMLLog());
         registrarCobranca() {
