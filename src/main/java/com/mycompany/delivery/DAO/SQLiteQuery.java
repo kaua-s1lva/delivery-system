@@ -1,4 +1,4 @@
-package com.mycompany.delivery.database;
+package com.mycompany.delivery.DAO;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
