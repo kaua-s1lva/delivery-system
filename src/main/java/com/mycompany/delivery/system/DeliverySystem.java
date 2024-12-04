@@ -10,6 +10,7 @@ import com.mycompany.delivery.format.FormatSQL;
 import com.mycompany.delivery.format.FormatXML;
 import com.mycompany.delivery.log.DBLog;
 import com.mycompany.delivery.log.JSONLog;
+import com.mycompany.delivery.log.XMLLog;
 import com.mycompany.delivery.models.Cliente;
 import com.mycompany.delivery.models.RegistroOperacao;
 import com.mycompany.delivery.models.Item;
@@ -51,8 +52,8 @@ public class DeliverySystem {
 
 //
         LogService logService = LogService.getInstance();
-        logService.setLog(new JSONLog("pessoa.json"));
-        logService.setFormatLog(new FormatJSON());
+        logService.setLog(new XMLLog());
+        logService.setFormatLog(new FormatXML());
 //        logService.setLog(new DBLog());
 //        logService.setFormatLog(new FormatSQL());
 
@@ -62,7 +63,7 @@ public class DeliverySystem {
 //        logService.setFormatLog(new FormatJSON());
         
         PedidoService.calcularValorTotalPedido(pedido);
-
+  PedidoService.calcularValorTotalPedido(pedido);
         //System.out.println("O calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
 
         //Cobranca cobranca = new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(), "Calculo de valor total", pedido.getCliente().getNome());
