@@ -1,7 +1,7 @@
 package com.mycompany.delivery.system;
 import java.util.Date;
 
-import com.mycompany.delivery.database.migrations.SQLiteTableCreation;
+import com.mycompany.delivery.DAO.SQLiteDAO;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
@@ -47,12 +47,14 @@ public class DeliverySystem {
         System.out.println(pedido.toString());
 
         //criação da tabela de Log
-        SQLiteTableCreation.createRegistroTable();
+        SQLiteDAO.createRegistroTable();
 
 //
         LogService logService = LogService.getInstance();
-        logService.setLog(new JSONLog("pessoa.json"));
-        logService.setFormatLog(new FormatJSON());
+        //logService.setLog(new JSONLog("pessoa.json"));
+        logService.setLog(new DBLog());
+        //logService.setFormatLog(new FormatJSON());
+        logService.setFormatLog(new FormatSQL());
 
 //        logService.setLog(new XMLLog("teste.xml"));
 //        logService.setFormatLog(new FormatXML());
