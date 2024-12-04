@@ -8,17 +8,21 @@ import java.util.logging.Logger;
 
 public class XMLLog implements ILog {
     private final ArquivoDAO arquivoDAO;
-    
+
     public XMLLog(){
         String caminhoArquivo = "logs/XMLLog.xml";
         arquivoDAO = new ArquivoDAO(caminhoArquivo);
+
         try {
             criarArquivoXML(caminhoArquivo);
         } catch (IOException ex) {
             Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
         }
     }  
-    
+   
+        criarArquivoXML(caminhoArquivo);
+    }
+
     @Override
     public void escreverMensagem(String mensagem) {
         try {
@@ -28,11 +32,11 @@ public class XMLLog implements ILog {
         }
     }
     
-    private void criarArquivoXML(String caminhoArquivo) throws IOException{
+    private void criarArquivoXML(String caminhoArquivo){
         arquivoDAO.criarArquivo(caminhoArquivo);
         arquivoDAO.escreverNoArquivo(obterCabecalhoXML());
     }
-    
+
     private String obterCabecalhoXML(){
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     }
