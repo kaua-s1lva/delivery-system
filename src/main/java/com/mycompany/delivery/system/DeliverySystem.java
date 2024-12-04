@@ -16,7 +16,7 @@ import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
 import com.mycompany.delivery.services.CalculadoraDeDescontoTaxaEntregaService;
 import com.mycompany.delivery.services.CalculadoraDeDescontoValorPedidoService;
-import com.mycompany.delivery.log.XMLLog;
+//import com.mycompany.delivery.log.XMLLog;
 import com.mycompany.delivery.services.LogService;
 import com.mycompany.delivery.services.PedidoService;
 
@@ -51,10 +51,10 @@ public class DeliverySystem {
 
 //
         LogService logService = LogService.getInstance();
-        //logService.setLog(new JSONLog("pessoa.json"));
-        logService.setLog(new DBLog());
-        //logService.setFormatLog(new FormatJSON());
-        logService.setFormatLog(new FormatSQL());
+        logService.setLog(new JSONLog("pessoa.json"));
+        logService.setFormatLog(new FormatJSON());
+//        logService.setLog(new DBLog());
+//        logService.setFormatLog(new FormatSQL());
 
 //        logService.setLog(new XMLLog("teste.xml"));
 //        logService.setFormatLog(new FormatXML());
