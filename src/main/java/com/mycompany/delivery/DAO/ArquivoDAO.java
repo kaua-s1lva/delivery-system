@@ -17,18 +17,18 @@ import java.util.logging.Logger;
  * @author tetzner
  */
 public class ArquivoDAO {
-    private String caminho_arquivo;
+    private String caminhoArquivo;
 
-    public ArquivoDAO(String caminho_arquivo) {
-        if(caminho_arquivo == null || caminho_arquivo.isEmpty()){
+    public ArquivoDAO(String caminhoArquivo) {
+        if(caminhoArquivo == null || caminhoArquivo.isEmpty()){
             throw new IllegalArgumentException("Caminho passado nulo ou invalido ");
         }
         
-        this.caminho_arquivo = caminho_arquivo;
+        this.caminhoArquivo = caminhoArquivo;
     }
     
-    public File criarArquivo(String caminhoArquivo) throws IOException{
-        File file = new File(caminho_arquivo);
+    public File criarArquivo() throws IOException{
+        File file = new File(caminhoArquivo);
         if(!file.exists()){
             file.getParentFile().mkdirs(); // força a criar o diretorio, caso necessario
             file.createNewFile();   
@@ -37,7 +37,7 @@ public class ArquivoDAO {
     }
     
     public boolean deletarArquivo(){
-        File file = new File(caminho_arquivo);
+        File file = new File(caminhoArquivo);
         if(file.exists()){
             return file.delete();
         }
@@ -45,14 +45,18 @@ public class ArquivoDAO {
     }
     
     public void escreverNoArquivo(String conteudo) throws IOException{
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(caminho_arquivo, true))){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(caminhoArquivo, true))){
             writer.write(conteudo);     
         } catch (IOException ex) {
-            Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArquivoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }   
     
     public boolean arquivoExiste(){
-        return new File(caminho_arquivo).exists();
+        return new File(caminhoArquivo).exists();
+    }
+    
+    public String getCaminhoArquivo(){
+        return caminhoArquivo;
     }
 }
