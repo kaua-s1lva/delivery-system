@@ -1,7 +1,7 @@
 package com.mycompany.delivery.system;
 import java.util.Date;
 
-import com.mycompany.delivery.database.SQLiteDAO;
+import com.mycompany.delivery.DAO.SQLiteDAO;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;

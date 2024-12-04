@@ -1,4 +1,4 @@
-package com.mycompany.delivery.database;
+package com.mycompany.delivery.DAO;
 
 public class SQLiteDAO {
 
