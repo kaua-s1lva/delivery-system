@@ -59,7 +59,7 @@ public class Principal {
         
         System.out.println(pedido.toString());
         
-        double valorTotal =  PedidoService.calcularValorTotalPedido(pedido);
+        double valorTotal = PedidoService.calcularValorTotalPedido(pedido);
         
         System.out.println("\nO calculo final do valor do pedido é: " + valorTotal);
     }
