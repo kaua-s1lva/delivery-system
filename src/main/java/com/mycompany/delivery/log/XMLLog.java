@@ -18,8 +18,8 @@ public class XMLLog implements ILog {
         } catch (IOException ex) {
             Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }  
-   
+    }
+
         criarArquivoXML(caminhoArquivo);
     }
 
@@ -31,7 +31,7 @@ public class XMLLog implements ILog {
             Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void criarArquivoXML(String caminhoArquivo){
         arquivoDAO.criarArquivo(caminhoArquivo);
         arquivoDAO.escreverNoArquivo(obterCabecalhoXML());
