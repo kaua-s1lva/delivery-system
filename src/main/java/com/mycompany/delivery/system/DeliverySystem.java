@@ -52,8 +52,8 @@ public class DeliverySystem {
         SQLiteDAO.createRegistroTable();
         
         LogService logService = LogService.getInstance();
-        logService.setLog(new JSONLog());
-        logService.setFormatLog(new FormatJSON());
+        logService.setLog(new XMLLog());
+        logService.setFormatLog(new FormatXML());
         
      //   PedidoService.calcularValorTotalPedido(pedido);
 
