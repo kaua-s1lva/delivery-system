@@ -9,7 +9,7 @@ import com.mycompany.delivery.models.RegistroOperacao;
 public class FormatXML implements IFormat {
 
     @Override
-    public String format(RegistroOperacao registroOperacao) {            
+    public String formatar(RegistroOperacao registroOperacao) {            
         String xml = "<RegistroOperacao>"
             + "<nomeUsuario>" + registroOperacao.getNomeUsuario() + "</nomeUsuario>"
             + "<data>" + registroOperacao.getData() + "</data>"

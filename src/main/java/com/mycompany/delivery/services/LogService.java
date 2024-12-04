@@ -50,6 +50,6 @@ public class LogService {
         if(log == null || formatLog == null){
             throw new IllegalStateException("O log ou formato nao foi configurado ");
         }
-        log.escreverMensagem(formatLog.format(registro));
+        log.escreverMensagem(formatLog.formatar(registro));
     }
 }

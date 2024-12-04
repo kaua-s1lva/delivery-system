@@ -9,7 +9,7 @@ import com.mycompany.delivery.models.RegistroOperacao;
 public class FormatJSON implements IFormat {
 
     @Override
-    public String format(RegistroOperacao registroOperacao) {
+    public String formatar(RegistroOperacao registroOperacao) {
         String json = "{"
             + "\"nomeUsuario\": \"" + registroOperacao.getNomeUsuario() + "\", "
             + "\"data\": \"" + registroOperacao.getData() + "\", "

@@ -9,7 +9,7 @@ import com.mycompany.delivery.models.RegistroOperacao;
 public class FormatSQL implements IFormat {
 
     @Override
-    public String format(RegistroOperacao registroOperacao) {
+    public String formatar(RegistroOperacao registroOperacao) {
         String queryInsert = String.format("INSERT INTO registro (nomeUsuario, data, hora, codigoPedido, nomeOperacao, nomeCliente) "
             + "VALUES ('%s', '%s', '%s', %d, '%s', '%s');", 
             registroOperacao.getNomeUsuario(), 
