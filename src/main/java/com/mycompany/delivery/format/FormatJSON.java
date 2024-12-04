@@ -17,7 +17,7 @@ public class FormatJSON implements IFormat {
             + "\"codigoPedido\": " + registroOperacao.getCodPedido() + ", "
             + "\"nomeOperacao\": \"" + registroOperacao.getNomeOperacao() + "\", "
             + "\"nomeCliente\": \"" + registroOperacao.getNomeCliente() + "\""
-            + "}";
+            + "},";
         return json;
     }
     
