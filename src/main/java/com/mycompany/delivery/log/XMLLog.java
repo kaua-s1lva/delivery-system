@@ -1,6 +1,5 @@
 package com.mycompany.delivery.log;
 
-import com.mycompany.delivery.DAO.ArquivoDAO;
 import com.mycompany.delivery.interfaces.ILog;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
