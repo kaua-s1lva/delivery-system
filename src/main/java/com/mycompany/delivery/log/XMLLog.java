@@ -8,13 +8,13 @@ import java.util.logging.Logger;
 
 public class XMLLog implements ILog {
     private final ArquivoDAO arquivoDAO;
-    
+
     public XMLLog(){
         String caminhoArquivo = "logs/XMLLog.xml";
         arquivoDAO = new ArquivoDAO(caminhoArquivo);
         criarArquivoXML(caminhoArquivo);
-    }  
-    
+    }
+
     @Override
     public void escreverMensagem(String mensagem) {
         try {
@@ -23,12 +23,12 @@ public class XMLLog implements ILog {
             Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void criarArquivoXML(String caminhoArquivo){
         arquivoDAO.criarArquivo(caminhoArquivo);
         arquivoDAO.escreverNoArquivo(obterCabecalhoXML());
     }
-    
+
     private String obterCabecalhoXML(){
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     }
