@@ -10,7 +10,7 @@ public class DBLog implements ILog {
     public void escreverMensagem(String mensagem) {
         try {
             SQLiteConnection.getInstance().createStatement().execute(mensagem);
-            System.out.println("Dado registrado com sucesso!");
+            System.out.println("\nDado registrado com sucesso!");
         } catch (SQLException e) {
             throw new IllegalStateException("Erro ao registrar dado: " + e.getMessage());
         }

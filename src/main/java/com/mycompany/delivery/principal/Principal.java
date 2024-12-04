@@ -7,7 +7,11 @@ import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomVal
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
 import com.mycompany.delivery.format.FormatJSON;
+import com.mycompany.delivery.format.FormatSQL;
+import com.mycompany.delivery.format.FormatXML;
+import com.mycompany.delivery.log.DBLog;
 import com.mycompany.delivery.log.JSONLog;
+import com.mycompany.delivery.log.XMLLog;
 import com.mycompany.delivery.models.Cliente;
 import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
@@ -46,16 +50,18 @@ public class Principal {
         
         // Set tipo de Log e formato de Log
         LogService logService = LogService.getInstance();
-        logService.setLog(new JSONLog());
-        logService.setFormatLog(new FormatJSON());
+        logService.setLog(new XMLLog());
+        logService.setFormatLog(new FormatXML());
         
        // System.out.println(SQLiteQuery.retornaRegistros());
         
         System.out.println("Informações do pedido: ");
         
         System.out.println(pedido.toString());
-
-        System.out.println("\nO calculo final do valor do pedido é: " +  PedidoService.calcularValorTotalPedido(pedido));
+        
+        double valorTotal =  PedidoService.calcularValorTotalPedido(pedido);
+        
+        System.out.println("\nO calculo final do valor do pedido é: " + valorTotal);
     }
 }
 

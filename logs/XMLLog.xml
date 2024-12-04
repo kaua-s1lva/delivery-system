@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Registros>
+  <registro><RegistroOperacao><nomeUsuario>Fulano de tal</nomeUsuario><data>2024-12-04</data><hora>14:00:39.941562300</hora><codigoPedido>1</codigoPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente></RegistroOperacao></registro>
+  <registro><RegistroOperacao><nomeUsuario>Gerente</nomeUsuario><data>2024-12-04</data><hora>14:07:24.441278300</hora><codigoPedido>1</codigoPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente></RegistroOperacao></registro>
+  <registro><RegistroOperacao><nomeUsuario>Gerente</nomeUsuario><data>2024-12-04</data><hora>14:09:27.416097600</hora><codigoPedido>1</codigoPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente></RegistroOperacao></registro>
+  <registro><RegistroOperacao><nomeUsuario>Balcão PDV 1</nomeUsuario><data>2024-12-04</data><hora>14:09:57.749312800</hora><codigoPedido>1</codigoPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente></RegistroOperacao></registro>
+  <registro><RegistroOperacao><nomeUsuario>Fulano de tal</nomeUsuario><data>2024-12-04</data><hora>14:10:09.163414300</hora><codigoPedido>1</codigoPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente></RegistroOperacao></registro>
+  <registro><RegistroOperacao><nomeUsuario>Balcão PDV 1</nomeUsuario><data>2024-12-04</data><hora>14:10:28.169978900</hora><codigoPedido>1</codigoPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente></RegistroOperacao></registro>
+</Registros>

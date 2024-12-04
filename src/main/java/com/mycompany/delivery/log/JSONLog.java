@@ -21,6 +21,7 @@ public class JSONLog implements ILog {
     public void escreverMensagem(String mensagem) {
         try {
             processarArquivoJSON(mensagem);
+            System.out.println("\nLog registrado no arquivo JSON!");
         } catch (IOException ex) {
             Logger.getLogger(JSONLog.class.getName()).log(Level.SEVERE, null, ex);
         }

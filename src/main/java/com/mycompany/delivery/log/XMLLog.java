@@ -40,6 +40,7 @@ public class XMLLog implements ILog {
     public void escreverMensagem(String mensagem) {
          try {
             processarArquivoXML(mensagem);
+            System.out.println("\nLog registrado no arquivo XML!");
         } catch (IOException ex) {
             Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
         }
