@@ -63,7 +63,7 @@ public class DeliverySystem {
 //        logService.setLog(new JSONLog("teste.json"));
 //        logService.setFormatLog(new FormatJSON());
         
-        PedidoService.calcularValorTotalPedido(pedido);
+     //   PedidoService.calcularValorTotalPedido(pedido);
 
         System.out.println(SQLiteQuery.retornaRegistros());
 
