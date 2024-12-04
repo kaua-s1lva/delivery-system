@@ -14,8 +14,7 @@ import java.time.LocalTime;
  * @author tetzner
  */
 public class PedidoService {
-    
-    
+
     public static double calcularValorTotalPedido(Pedido pedido) {
         if (pedido == null) {
             throw new IllegalArgumentException("Pedido não pode ser nulo.");

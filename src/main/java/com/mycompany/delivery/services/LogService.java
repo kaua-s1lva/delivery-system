@@ -47,8 +47,8 @@ public class LogService {
         ILog log = getInstance().getLog();
         IFormat formatLog = getInstance().getFormatLog();
         
-        if(log == null || formatLog == null){
-            throw new IllegalStateException("O log ou formato nao foi configurado ");
+        if(registro == null || log == null || formatLog == null){
+            throw new IllegalStateException("O registro, log ou formato sao nulos ");
         }
         log.escreverMensagem(formatLog.formatar(registro));
     }
