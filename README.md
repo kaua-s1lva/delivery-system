@@ -1,6 +1,6 @@
 # Delivery System - Change request 3 - Módulo de Log
 
-## Objetivo
+## 🎯 Objetivo
 
 Este projeto é um sistema de delivery desenvolvido como parte das atividades da disciplina. O projeto engloba funcionalidades relacionadas ao cálculo de descontos, registro de logs e outros requisitos descritos nos Change Requests (CR1, CR2 e CR3). A implementação atende aos princípios de design orientado a objetos e utiliza Java 17 e Maven.
 
@@ -10,7 +10,7 @@ Este projeto é um sistema de delivery desenvolvido como parte das atividades da
 - **Gabriel Tetzner Menegueti** - 2022200525  
 - **Kauã de Souza da Silva** - 2022200418  
 
-## Diagrama de classes
+## 📐 Diagrama de classes
 
 O diagrama de classes podem ser encontrado na pasta `/diagramaclasses` [(Clique aqui)](diagramaclasses/).
 
