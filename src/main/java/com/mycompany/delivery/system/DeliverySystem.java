@@ -53,8 +53,8 @@ public class DeliverySystem {
 
 //
         LogService logService = LogService.getInstance();
-        logService.setLog(new XMLLog());
-        logService.setFormatLog(new FormatXML());
+        logService.setLog(new JSONLog());
+        logService.setFormatLog(new FormatJSON());
 //        logService.setLog(new DBLog());
 //        logService.setFormatLog(new FormatSQL());
 
