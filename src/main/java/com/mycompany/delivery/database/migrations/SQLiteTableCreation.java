@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-import com.mycompany.delivery.database.SQLiteConnection;
+import com.mycompany.delivery.DAO.SQLiteConnection;
 
 public class SQLiteTableCreation {
 
