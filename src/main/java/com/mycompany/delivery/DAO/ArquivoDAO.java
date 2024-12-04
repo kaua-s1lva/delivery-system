@@ -4,10 +4,13 @@
  */
 package com.mycompany.delivery.DAO;
 
+import com.mycompany.delivery.log.XMLLog;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -44,7 +47,12 @@ public class ArquivoDAO {
     public void escreverNoArquivo(String conteudo) throws IOException{
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(caminho_arquivo, true))){
             writer.write(conteudo);     
-        } 
-        // lançar uma exceção
-    }      
+        } catch (IOException ex) {
+            Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }   
+    
+    public boolean arquivoExiste(){
+        return new File(caminho_arquivo).exists();
+    }
 }

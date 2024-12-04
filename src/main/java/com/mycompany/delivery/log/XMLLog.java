@@ -13,15 +13,8 @@ public class XMLLog implements ILog {
         String caminhoArquivo = "logs/XMLLog.xml";
         arquivoDAO = new ArquivoDAO(caminhoArquivo);
 
-        try {
-            criarArquivoXML(caminhoArquivo);
-        } catch (IOException ex) {
-            Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }  
-   
         criarArquivoXML(caminhoArquivo);
-    }
+    }  
 
     @Override
     public void escreverMensagem(String mensagem) {
@@ -33,8 +26,12 @@ public class XMLLog implements ILog {
     }
     
     private void criarArquivoXML(String caminhoArquivo){
-        arquivoDAO.criarArquivo(caminhoArquivo);
-        arquivoDAO.escreverNoArquivo(obterCabecalhoXML());
+        try {
+            arquivoDAO.criarArquivo(caminhoArquivo);
+            arquivoDAO.escreverNoArquivo(obterCabecalhoXML());
+        } catch (IOException ex) {
+            Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private String obterCabecalhoXML(){
