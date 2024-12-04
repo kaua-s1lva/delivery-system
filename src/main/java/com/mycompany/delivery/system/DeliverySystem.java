@@ -50,18 +50,10 @@ public class DeliverySystem {
 
         //criação da tabela de Log
         SQLiteDAO.createRegistroTable();
-
-//
+        
         LogService logService = LogService.getInstance();
         logService.setLog(new JSONLog());
         logService.setFormatLog(new FormatJSON());
-//        logService.setLog(new DBLog());
-//        logService.setFormatLog(new FormatSQL());
-
-//        logService.setLog(new XMLLog("teste.xml"));
-//        logService.setFormatLog(new FormatXML());
-//        logService.setLog(new JSONLog("teste.json"));
-//        logService.setFormatLog(new FormatJSON());
         
      //   PedidoService.calcularValorTotalPedido(pedido);
 
@@ -70,19 +62,6 @@ public class DeliverySystem {
         PedidoService.calcularValorTotalPedido(pedido);
 
         //System.out.println("O calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
-
-        //Cobranca cobranca = new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(), "Calculo de valor total", pedido.getCliente().getNome());
-        //RegistradoraLogService reg = new RegistradoraLogService();
-
-        //reg.registrar(cobranca, new XMLLog());
-/*
-        RegistroOperacao cobranca = new RegistroOperacao();
-
-        cobranca.registrarCobranca(pedido, new XMLLog());
-        registrarCobranca() {
-            pedido.getValorTotalPedido();
-            obter as informações do registro
-*/
     }
 }
 
