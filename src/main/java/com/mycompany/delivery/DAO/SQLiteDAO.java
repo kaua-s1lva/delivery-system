@@ -1,5 +1,7 @@
 package com.mycompany.delivery.DAO;
 
+import java.sql.SQLException;
+
 public class SQLiteDAO {
 
     public static void createRegistroTable() {
@@ -19,7 +21,7 @@ public class SQLiteDAO {
             //SQLiteConnection.connect("log.db").createStatement().execute(sql);
             SQLiteConnection.getInstance().createStatement().execute(sql);
             System.out.println("Tabela criada com sucesso!");
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new IllegalStateException("Erro ao criar a tabela: " + e.getMessage());
         }
     }

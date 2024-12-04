@@ -7,11 +7,11 @@ import java.util.List;
 
 public class Pedido {
     private static int codPedido=0;
-    private double taxaEntrega;
-    private Cliente cliente;
-    private ArrayList<Item> itens = new ArrayList<>();
-    private List<CupomDescontoEntrega> cuponsDescontoEntrega;
-    private List<CupomDescontoValorPedido> cuponsDescontoValorPedido;
+    private final double taxaEntrega;
+    private final Cliente cliente;
+    private final ArrayList<Item> itens = new ArrayList<>();
+    private final List<CupomDescontoEntrega> cuponsDescontoEntrega;
+    private final List<CupomDescontoValorPedido> cuponsDescontoValorPedido;
 
     public Pedido (Date data, Cliente cliente, double taxaEntrega) {
         this.cliente = cliente;

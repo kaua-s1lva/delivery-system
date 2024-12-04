@@ -1,8 +1,8 @@
 package com.mycompany.delivery.models;
 
 public class CupomDescontoValorPedido {
-    private String nomeMetodo;
-    private double valorDesconto;
+    private final String nomeMetodo;
+    private final double valorDesconto;
 
     public CupomDescontoValorPedido(String nomeMetodo, double valorDesconto) {
         this.nomeMetodo = nomeMetodo;

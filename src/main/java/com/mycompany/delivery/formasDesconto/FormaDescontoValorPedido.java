@@ -5,7 +5,7 @@ import com.mycompany.delivery.models.CupomDescontoEntrega;
 import com.mycompany.delivery.models.Pedido;
 
 public class FormaDescontoValorPedido implements IFormaDescontoTaxaEntrega {
-    private static double valorDesconto = 0.15;
+    private static final double valorDesconto = 0.15;
 
     @Override
     public void calcularDesconto(Pedido pedido) {

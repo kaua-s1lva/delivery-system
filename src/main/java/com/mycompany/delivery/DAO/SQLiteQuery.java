@@ -1,6 +1,7 @@
 package com.mycompany.delivery.DAO;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SQLiteQuery {
@@ -13,7 +14,7 @@ public class SQLiteQuery {
             while (rs.next()) {
                 registros = rs.getString("nomeCliente");
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new IllegalStateException("Erro ao criar a tabela: " + e.getMessage());
         }
         return registros;
