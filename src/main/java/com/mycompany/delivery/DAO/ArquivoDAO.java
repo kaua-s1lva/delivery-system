@@ -14,14 +14,14 @@ import java.io.IOException;
  * @author tetzner
  */
 public class ArquivoDAO {
-    private String caminho_arquivo = "src\\main\\java\\logs\\JsonLog.json";
+    private String caminho_arquivo;
 
-    public ArquivoDAO(String fileName) {
-        if(fileName == null || fileName.isEmpty()){
+    public ArquivoDAO(String caminho_arquivo) {
+        if(caminho_arquivo == null || caminho_arquivo.isEmpty()){
             throw new IllegalArgumentException("Caminho passado nulo ou invalido ");
         }
         
-        caminho_arquivo = caminho_arquivo.concat(fileName);
+        this.caminho_arquivo = caminho_arquivo;
     }
     
     public File criarArquivo() throws IOException{
