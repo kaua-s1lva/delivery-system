@@ -2,6 +2,7 @@ package com.mycompany.delivery.system;
 import java.util.Date;
 
 import com.mycompany.delivery.DAO.SQLiteDAO;
+import com.mycompany.delivery.DAO.SQLiteQuery;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
@@ -10,6 +11,7 @@ import com.mycompany.delivery.format.FormatSQL;
 import com.mycompany.delivery.format.FormatXML;
 import com.mycompany.delivery.log.DBLog;
 import com.mycompany.delivery.log.JSONLog;
+import com.mycompany.delivery.log.XMLLog;
 import com.mycompany.delivery.models.Cliente;
 import com.mycompany.delivery.models.RegistroOperacao;
 import com.mycompany.delivery.models.Item;
@@ -51,8 +53,8 @@ public class DeliverySystem {
 
 //
         LogService logService = LogService.getInstance();
-        logService.setLog(new JSONLog("pessoa.json"));
-        logService.setFormatLog(new FormatJSON());
+        logService.setLog(new XMLLog());
+        logService.setFormatLog(new FormatXML());
 //        logService.setLog(new DBLog());
 //        logService.setFormatLog(new FormatSQL());
 
@@ -61,6 +63,10 @@ public class DeliverySystem {
 //        logService.setLog(new JSONLog("teste.json"));
 //        logService.setFormatLog(new FormatJSON());
         
+     //   PedidoService.calcularValorTotalPedido(pedido);
+
+        System.out.println(SQLiteQuery.retornaRegistros());
+
         PedidoService.calcularValorTotalPedido(pedido);
 
         //System.out.println("O calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
