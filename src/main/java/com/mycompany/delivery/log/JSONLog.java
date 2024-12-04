@@ -2,7 +2,12 @@ package com.mycompany.delivery.log;
 
 import com.mycompany.delivery.DAO.ArquivoDAO;
 import com.mycompany.delivery.interfaces.ILog;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +24,19 @@ public class JSONLog implements ILog {
         arquivoDAO = new ArquivoDAO(caminhoArquivo);
         criarArquivoJSON(caminhoArquivo);
     }
-
+    
+    
+    private void criarArquivoJSON(String caminhoArquivo) {
+        File arquivo = new File(caminhoArquivo);
+        if (!arquivo.exists()) {
+            try {
+                arquivoDAO.criarArquivo(caminhoArquivo);
+            } catch (IOException ex) {
+                Logger.getLogger(JSONLog.class.getName()).log(Level.SEVERE, "Erro ao criar o arquivo JSON.", ex);
+            }
+        }  
+    }
+    
     @Override
     public void escreverMensagem(String mensagem) {
         try {
@@ -28,18 +45,4 @@ public class JSONLog implements ILog {
             throw new RuntimeException("Erro ao escrever no arquivo JSON: " + e.getMessage(), e);
         }
     }
-    
-    
-    private void criarArquivoJSON(String caminhoArquivo) {
-        File arquivo = new File(caminhoArquivo);
-        if (!arquivo.exists()) {
-            try {
-                arquivoDAO.criarArquivo(caminhoArquivo); // Cria o arquivo
-                arquivoDAO.escreverNoArquivo("["); // Escreve o cabeçalho
-            } catch (IOException ex) {
-                Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, "Erro ao criar o arquivo XML.", ex);
-            }
-        }  
-    }
-     
 }
