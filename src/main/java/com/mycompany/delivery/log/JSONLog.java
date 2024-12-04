@@ -61,9 +61,12 @@ public class JSONLog implements ILog {
             } else {
                 conteudoAtual.append("[\n").append(mensagem).append("\n]");
             }
-            arquivoDAO.escreverNoArquivo(conteudoAtual.toString());
-        } catch (IOException e) {
-            throw new RuntimeException("Erro ao escrever no arquivo JSON: " + e.getMessage(), e);
-        }
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                writer.write(conteudoAtual.toString());
+            }
+            } catch (IOException e) {
+                throw new RuntimeException("Erro ao escrever no arquivo JSON: " + e.getMessage(), e);
+            }
     }
 }
