@@ -30,7 +30,7 @@ public class JSONLog implements ILog {
         File arquivo = new File(caminhoArquivo);
         if (!arquivo.exists()) {
             try {
-                arquivoDAO.criarArquivo(caminhoArquivo);
+                arquivoDAO.criarArquivo();
             } catch (IOException ex) {
                 Logger.getLogger(JSONLog.class.getName()).log(Level.SEVERE, "Erro ao criar o arquivo JSON.", ex);
             }
@@ -39,8 +39,29 @@ public class JSONLog implements ILog {
     
     @Override
     public void escreverMensagem(String mensagem) {
+        File file = new File(arquivoDAO.getCaminhoArquivo());
+    
         try {
-            arquivoDAO.escreverNoArquivo(mensagem);
+            StringBuilder conteudoAtual = new StringBuilder();
+
+            if (file.length() > 2) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                    String linha;
+                    while ((linha = reader.readLine()) != null) {
+                        conteudoAtual.append(linha);
+                    }
+                }
+
+                int posicaoFechamento = conteudoAtual.lastIndexOf("]");
+                
+                if (posicaoFechamento != -1) {
+                    conteudoAtual.deleteCharAt(posicaoFechamento);
+                    conteudoAtual.append(",\n").append(mensagem).append("\n]");
+                }
+            } else {
+                conteudoAtual.append("[\n").append(mensagem).append("\n]");
+            }
+            arquivoDAO.escreverNoArquivo(conteudoAtual.toString());
         } catch (IOException e) {
             throw new RuntimeException("Erro ao escrever no arquivo JSON: " + e.getMessage(), e);
         }

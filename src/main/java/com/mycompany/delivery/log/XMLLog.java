@@ -21,7 +21,8 @@ public class XMLLog implements ILog {
     @Override
     public void escreverMensagem(String mensagem) {
         try {
-            arquivoDAO.escreverNoArquivo(mensagem+"\n");
+            arquivoDAO.escreverNoArquivo("  <registro>" + mensagem + "</registro>\n");
+            arquivoDAO.escreverNoArquivo("</Registros>");
         } catch (IOException ex) {
             Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -31,8 +32,9 @@ public class XMLLog implements ILog {
         File arquivo = new File(caminhoArquivo);
         if (!arquivo.exists()) {
             try {
-                arquivoDAO.criarArquivo(caminhoArquivo); // Cria o arquivo
-                arquivoDAO.escreverNoArquivo(obterCabecalhoXML()); // Escreve o cabeçalho
+                arquivoDAO.criarArquivo(); 
+                arquivoDAO.escreverNoArquivo(obterCabecalhoXML()); 
+                arquivoDAO.escreverNoArquivo("<Registros>\n"); 
             } catch (IOException ex) {
                 Logger.getLogger(XMLLog.class.getName()).log(Level.SEVERE, "Erro ao criar o arquivo XML.", ex);
             }
@@ -42,4 +44,5 @@ public class XMLLog implements ILog {
     private String obterCabecalhoXML(){
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     }
+
 }
