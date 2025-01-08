@@ -1,6 +1,6 @@
-package com.mycompany.delivery.services;
+package com.mycompany.delivery.descontopedido.services;
 
-import com.mycompany.delivery.interfaces.IFormaDescontoValorPedido;
+import com.mycompany.delivery.descontopedido.interfaces.IFormaDescontoValorPedido;
 import com.mycompany.delivery.models.Pedido;
 
 public class CalculadoraDeDescontoValorPedidoService {

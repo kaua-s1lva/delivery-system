@@ -1,8 +1,8 @@
-package com.mycompany.delivery.services;
+package com.mycompany.delivery.log.services;
 
 import com.mycompany.delivery.format.IFormat;
-import com.mycompany.delivery.interfaces.ILog;
-import com.mycompany.delivery.models.RegistroOperacao;
+import com.mycompany.delivery.log.interfaces.ILog;
+import com.mycompany.delivery.log.models.RegistroOperacao;
 
 public class LogService {
     private static LogService singleInstance = null;

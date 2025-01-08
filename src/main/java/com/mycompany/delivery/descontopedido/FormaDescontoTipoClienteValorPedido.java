@@ -1,10 +1,10 @@
-package com.mycompany.delivery.formasDescontoValorPedido;
+package com.mycompany.delivery.descontopedido;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.mycompany.delivery.interfaces.IFormaDescontoValorPedido;
-import com.mycompany.delivery.models.CupomDescontoValorPedido;
+import com.mycompany.delivery.descontopedido.interfaces.IFormaDescontoValorPedido;
+import com.mycompany.delivery.descontopedido.models.CupomDescontoValorPedido;
 import com.mycompany.delivery.models.Pedido;
 
 public class FormaDescontoTipoClienteValorPedido implements IFormaDescontoValorPedido {

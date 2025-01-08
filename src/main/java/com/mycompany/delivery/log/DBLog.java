@@ -1,7 +1,8 @@
 package com.mycompany.delivery.log;
 
 import com.mycompany.delivery.DAO.SQLiteConnection;
-import com.mycompany.delivery.interfaces.ILog;
+import com.mycompany.delivery.log.interfaces.ILog;
+
 import java.sql.SQLException;
 
 public class DBLog implements ILog {
