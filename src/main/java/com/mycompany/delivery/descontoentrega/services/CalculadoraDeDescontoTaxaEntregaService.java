@@ -1,12 +1,12 @@
-package com.mycompany.delivery.services;
+package com.mycompany.delivery.descontoentrega.services;
 
 import java.util.ArrayList;
 
-import com.mycompany.delivery.formasDesconto.FormaDescontoTaxaPorBairro;
-import com.mycompany.delivery.formasDesconto.FormaDescontoTaxaPorTipoCliente;
-import com.mycompany.delivery.formasDesconto.FormaDescontoTipoItem;
-import com.mycompany.delivery.formasDesconto.FormaDescontoValorPedido;
-import com.mycompany.delivery.interfaces.IFormaDescontoTaxaEntrega;
+import com.mycompany.delivery.descontoentrega.FormaDescontoTaxaPorBairro;
+import com.mycompany.delivery.descontoentrega.FormaDescontoTaxaPorTipoCliente;
+import com.mycompany.delivery.descontoentrega.FormaDescontoTipoItem;
+import com.mycompany.delivery.descontoentrega.FormaDescontoValorPedido;
+import com.mycompany.delivery.descontoentrega.interfaces.IFormaDescontoTaxaEntrega;
 import com.mycompany.delivery.models.Pedido;
 import java.util.List;
 

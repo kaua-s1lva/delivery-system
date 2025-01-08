@@ -1,6 +1,5 @@
 package com.mycompany.delivery.log;
 
-import com.mycompany.delivery.interfaces.ILog;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.mycompany.delivery.log.interfaces.ILog;
 
 public class XMLLog implements ILog {
     

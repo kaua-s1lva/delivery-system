@@ -1,7 +1,7 @@
-package com.mycompany.delivery.formasDesconto;
+package com.mycompany.delivery.descontoentrega;
 
-import com.mycompany.delivery.interfaces.IFormaDescontoTaxaEntrega;
-import com.mycompany.delivery.models.CupomDescontoEntrega;
+import com.mycompany.delivery.descontoentrega.interfaces.IFormaDescontoTaxaEntrega;
+import com.mycompany.delivery.descontoentrega.models.CupomDescontoEntrega;
 import com.mycompany.delivery.models.Pedido;
 
 public class FormaDescontoValorPedido implements IFormaDescontoTaxaEntrega {

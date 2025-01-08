@@ -1,4 +1,4 @@
-package com.mycompany.delivery.models;
+package com.mycompany.delivery.log.models;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

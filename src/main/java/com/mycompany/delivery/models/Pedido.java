@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import com.mycompany.delivery.descontoentrega.models.CupomDescontoEntrega;
+import com.mycompany.delivery.descontopedido.models.CupomDescontoValorPedido;
+
 public class Pedido {
     private static int codPedido=0;
     private final double taxaEntrega;

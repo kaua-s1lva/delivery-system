@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.delivery.services;
+package com.mycompany.delivery.log.services;
 
-import com.mycompany.delivery.models.RegistroOperacao;
+import com.mycompany.delivery.services.UsuarioLogadoService;
+import com.mycompany.delivery.log.models.RegistroOperacao;
 import com.mycompany.delivery.models.Pedido;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,7 +14,7 @@ import java.time.LocalTime;
  *
  * @author tetzner
  */
-public class PedidoService {
+public class CalculadoraDeValorTotalPedidoService {
 
     public static double calcularValorTotalPedido(Pedido pedido) {
         if (pedido == null) {

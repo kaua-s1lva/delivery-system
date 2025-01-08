@@ -1,10 +1,10 @@
-package com.mycompany.delivery.models;
+package com.mycompany.delivery.descontopedido.models;
 
-public class CupomDescontoEntrega {
+public class CupomDescontoValorPedido {
     private final String nomeMetodo;
     private final double valorDesconto;
 
-    public CupomDescontoEntrega(String nomeMetodo, double valorDesconto) {
+    public CupomDescontoValorPedido(String nomeMetodo, double valorDesconto) {
         this.nomeMetodo = nomeMetodo;
         this.valorDesconto = valorDesconto;
     }

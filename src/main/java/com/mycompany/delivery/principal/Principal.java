@@ -3,22 +3,22 @@ import java.util.Date;
 
 import com.mycompany.delivery.DAO.SQLiteDAO;
 import com.mycompany.delivery.DAO.SQLiteQuery;
-import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoCodCupomValorPedido;
-import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoClienteValorPedido;
-import com.mycompany.delivery.formasDescontoValorPedido.FormaDescontoTipoItemValorPedido;
+import com.mycompany.delivery.descontoentrega.services.CalculadoraDeDescontoTaxaEntregaService;
+import com.mycompany.delivery.descontopedido.FormaDescontoCodCupomValorPedido;
+import com.mycompany.delivery.descontopedido.FormaDescontoTipoClienteValorPedido;
+import com.mycompany.delivery.descontopedido.FormaDescontoTipoItemValorPedido;
+import com.mycompany.delivery.descontopedido.services.CalculadoraDeDescontoValorPedidoService;
 import com.mycompany.delivery.format.FormatJSON;
 import com.mycompany.delivery.format.FormatSQL;
 import com.mycompany.delivery.format.FormatXML;
 import com.mycompany.delivery.log.DBLog;
 import com.mycompany.delivery.log.JSONLog;
 import com.mycompany.delivery.log.XMLLog;
+import com.mycompany.delivery.log.services.CalculadoraDeValorTotalPedidoService;
+import com.mycompany.delivery.log.services.LogService;
 import com.mycompany.delivery.models.Cliente;
 import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
-import com.mycompany.delivery.services.CalculadoraDeDescontoTaxaEntregaService;
-import com.mycompany.delivery.services.CalculadoraDeDescontoValorPedidoService;
-import com.mycompany.delivery.services.LogService;
-import com.mycompany.delivery.services.PedidoService;
 
 public class Principal {
     public static void main (String[] args) {
@@ -59,7 +59,7 @@ public class Principal {
         
         System.out.println(pedido.toString());
         
-        double valorTotal = PedidoService.calcularValorTotalPedido(pedido);
+        double valorTotal = CalculadoraDeValorTotalPedidoService.calcularValorTotalPedido(pedido);
         
         System.out.println("\nO calculo final do valor do pedido é: " + valorTotal);
     }
