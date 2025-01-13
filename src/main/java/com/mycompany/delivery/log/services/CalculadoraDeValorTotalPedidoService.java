@@ -15,8 +15,13 @@ import java.time.LocalTime;
  * @author tetzner
  */
 public class CalculadoraDeValorTotalPedidoService {
+    private LogService logService;
 
-    public static double calcularValorTotalPedido(Pedido pedido) {
+    public CalculadoraDeValorTotalPedidoService() {
+        this.logService = new LogService();
+    }
+    
+    public void calcularValorTotalPedido(Pedido pedido) {
         if (pedido == null) {
             throw new IllegalArgumentException("Pedido não pode ser nulo.");
         }
@@ -25,8 +30,9 @@ public class CalculadoraDeValorTotalPedidoService {
         
         String NOME_DO_METODO = "getValorTotalPedido";
         String nomeOperacao = "Calculo do valor total do pedido (" + NOME_DO_METODO + ")";
-        LogService.registrarLog(new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(),nomeOperacao, pedido.getCliente().getNome()));
-        return valorTotal;  
+        
+        logService.registrarLog(new RegistroOperacao(UsuarioLogadoService.getNomeUsuario(), LocalDate.now(), LocalTime.now(), pedido.getCodPedido(),nomeOperacao, pedido.getCliente().getNome(), valorTotal));
+      //  return valorTotal;  
         
     }
     

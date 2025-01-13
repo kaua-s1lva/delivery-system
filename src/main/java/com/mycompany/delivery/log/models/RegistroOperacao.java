@@ -10,14 +10,16 @@ public class RegistroOperacao {
     private final int codPedido;
     private final String nomeOperacao;
     private final String nomeCliente;
+    private final double valorTotalPedido;
 
-    public RegistroOperacao(String nomeUsuario, LocalDate data, LocalTime hora, int codPedido, String nomeOperacao, String nomeCliente) {
+    public RegistroOperacao(String nomeUsuario, LocalDate data, LocalTime hora, int codPedido, String nomeOperacao, String nomeCliente, double valorTotalPedido) {
         this.nomeUsuario = nomeUsuario;
         this.data = data;
         this.hora = hora;
         this.codPedido = codPedido;
         this.nomeOperacao = nomeOperacao;
         this.nomeCliente = nomeCliente;
+        this.valorTotalPedido = valorTotalPedido;
     }
 
     public String getNomeUsuario() {
@@ -44,9 +46,13 @@ public class RegistroOperacao {
         return nomeCliente;
     }
 
+    public double getValorTotalPedido() {
+        return valorTotalPedido;
+    }
+
     @Override
     public String toString() {
-        return nomeUsuario + ";" + data.toString() + ";" + hora.toString() + ";" + codPedido + ";" + nomeOperacao + ";" + nomeCliente;
+        return "Registro do calculo do valor total do pedido: " + "nomeUsuario = " + nomeUsuario + ", data = " + data + ", hora = " + hora + ", codPedido = " + codPedido + ", nomeOperacao = " + nomeOperacao + ", nomeCliente = " + nomeCliente + ", valorTotalPedido = " + valorTotalPedido;
     }
-    
+
 }

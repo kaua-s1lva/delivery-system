@@ -1,55 +1,20 @@
 package com.mycompany.delivery.log.services;
 
-import com.mycompany.delivery.format.IFormat;
-import com.mycompany.delivery.log.interfaces.ILog;
+import com.br.log.DBLog;
+import com.br.log.JSONLog;
+import com.br.log.XMLLog;
+import com.mycompany.delivery.log.adapter.LogAdapter;
 import com.mycompany.delivery.log.models.RegistroOperacao;
 
 public class LogService {
-    private static LogService singleInstance = null;
-    private ILog log;
-    private IFormat formatLog;
+    private final LogAdapter logAdapter;
     
-    private LogService(){
-        
+    public LogService(){
+        logAdapter = new LogAdapter(new JSONLog());
     }
     
-    public static LogService getInstance(){
-        if(singleInstance == null){
-            singleInstance = new LogService();
-        }
-        return singleInstance;
+    public void registrarLog(RegistroOperacao registro) {
+        logAdapter.escreverMensagem(registro);
     }
     
-    public ILog getLog(){
-        return log;
-    }
-    
-    public IFormat getFormatLog(){
-        return formatLog;
-    }
-     
-    public void setLog(ILog log){
-        if(log == null){
-            throw new IllegalArgumentException("O tipo de log nao pode ser nulo");
-        }
-        this.log = log;
-    }
-    
-    public void setFormatLog(IFormat formatLog){
-        if(formatLog == null){
-            throw new IllegalArgumentException("Formato nulo, necessario passar um formato valido");
-        }
-        
-        this.formatLog = formatLog;
-    }
-    
-    public static void registrarLog(RegistroOperacao registro) {
-        ILog log = getInstance().getLog();
-        IFormat formatLog = getInstance().getFormatLog();
-        
-        if(registro == null || log == null || formatLog == null){
-            throw new IllegalStateException("O registro, log ou formato sao nulos ");
-        }
-        log.escreverMensagem(formatLog.formatar(registro));
-    }
 }
