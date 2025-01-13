@@ -1,21 +1,12 @@
 package com.mycompany.delivery.principal;
-import java.util.Date;
 
-import com.mycompany.delivery.DAO.SQLiteDAO;
-import com.mycompany.delivery.DAO.SQLiteQuery;
+import java.util.Date;
 import com.mycompany.delivery.descontoentrega.services.CalculadoraDeDescontoTaxaEntregaService;
 import com.mycompany.delivery.descontopedido.FormaDescontoCodCupomValorPedido;
 import com.mycompany.delivery.descontopedido.FormaDescontoTipoClienteValorPedido;
 import com.mycompany.delivery.descontopedido.FormaDescontoTipoItemValorPedido;
 import com.mycompany.delivery.descontopedido.services.CalculadoraDeDescontoValorPedidoService;
-import com.mycompany.delivery.format.FormatJSON;
-import com.mycompany.delivery.format.FormatSQL;
-import com.mycompany.delivery.format.FormatXML;
-import com.mycompany.delivery.log.DBLog;
-import com.mycompany.delivery.log.JSONLog;
-import com.mycompany.delivery.log.XMLLog;
 import com.mycompany.delivery.log.services.CalculadoraDeValorTotalPedidoService;
-import com.mycompany.delivery.log.services.LogService;
 import com.mycompany.delivery.models.Cliente;
 import com.mycompany.delivery.models.Item;
 import com.mycompany.delivery.models.Pedido;
@@ -44,24 +35,16 @@ public class Principal {
         } catch (RuntimeException e) {
             System.out.println("Falha: " + e);
         }
-
-        // Criação da tabela de Log
-        SQLiteDAO.createRegistroTable();
-        
-        // Set tipo de Log e formato de Log
-        LogService logService = LogService.getInstance();
-        logService.setLog(new XMLLog());
-        logService.setFormatLog(new FormatXML());
-        
-       // System.out.println(SQLiteQuery.retornaRegistros());
         
         System.out.println("Informações do pedido: ");
         
         System.out.println(pedido.toString());
         
-        double valorTotal = CalculadoraDeValorTotalPedidoService.calcularValorTotalPedido(pedido);
+        CalculadoraDeValorTotalPedidoService calculadoraDeValorTotalService = new CalculadoraDeValorTotalPedidoService();
         
-        System.out.println("\nO calculo final do valor do pedido é: " + valorTotal);
+        calculadoraDeValorTotalService.calcularValorTotalPedido(pedido);
+        
+        System.out.println("\nO calculo final do valor do pedido é: " + pedido.getValorTotalPedido());
     }
 }
 
