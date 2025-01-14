@@ -21,7 +21,7 @@ O diagrama de classes podem ser encontrado na pasta `/diagramaclasses` [(Clique 
 - **Gerenciador de Dependências**: Maven.
 - **Entregáveis**:
   - Código-fonte completo no GitHub.
-  - Classe `Principal` com exemplos   de uso.
+  - Classe `Principal` com exemplos de uso.
   - Tratamento de exceções para garantir a confiabilidade.
   - Diagrama de classes atualizado.
 

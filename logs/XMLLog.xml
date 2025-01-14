@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Registros>
-  <RegistroOperacao><nomeUsuario>Fulano de tal</nomeUsuario><data>2025</data><data>1</data><data>11</data><hora>8</hora><hora>6</hora><hora>30</hora><hora>19165800</hora><codPedido>1</codPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente><valorTotalPedido>9.3</valorTotalPedido></RegistroOperacao>
-  <RegistroOperacao><nomeUsuario>Balcão PDV 1</nomeUsuario><data>2025</data><data>1</data><data>11</data><hora>8</hora><hora>6</hora><hora>46</hora><hora>443255300</hora><codPedido>1</codPedido><nomeOperacao>Calculo do valor total do pedido (getValorTotalPedido)</nomeOperacao><nomeCliente>Kaua</nomeCliente><valorTotalPedido>9.3</valorTotalPedido></RegistroOperacao>
-</Registros>
