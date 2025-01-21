@@ -26,15 +26,9 @@ public class Principal {
 
         calculadora.calcularDescontoTaxaEntrega(pedido);
 
-        CalculadoraDeDescontoValorPedidoService calculadoraValorPedido = new CalculadoraDeDescontoValorPedidoService();
+        CalculadoraDeDescontoValorPedidoService calculadoraValorPedido = new CalculadoraDeDescontoValorPedidoService("DESC10");
 
-        try{
-            calculadoraValorPedido.aplicarDesconto(pedido, new FormaDescontoCodCupomValorPedido("DESC10"));
-            calculadoraValorPedido.aplicarDesconto(pedido, new FormaDescontoTipoItemValorPedido());
-            calculadoraValorPedido.aplicarDesconto(pedido, new FormaDescontoTipoClienteValorPedido());
-        } catch (RuntimeException e) {
-            System.out.println("Falha: " + e);
-        }
+        calculadoraValorPedido.aplicarDesconto(pedido);
         
         System.out.println("Informações do pedido: ");
         
